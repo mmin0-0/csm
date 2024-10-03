@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { connectDB } from "@/util/database.js";
+import { connectDB } from "@/util/database";
 import * as globalStyles from '../../styles/global.css';
 import * as tableStyles from '../../styles/components/Table.css';
 import * as pageStyles from '../../styles/Pages.css';

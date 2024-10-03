@@ -1,4 +1,4 @@
-import { connectDB } from "@/util/database.js";
+import { connectDB } from "@/util/database";
 import * as globalStyles from "../styles/global.css";
 import * as pageStyles from '../styles/Pages.css';
 import { ListLink, ButtonType01 } from '../components/Button';

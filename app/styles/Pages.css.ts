@@ -123,7 +123,8 @@ export const swiperBtn = style({
       opacity: '.65',
       pointerEvents: 'none'
     },
-    '&:hover':{background: vars.color.mainColor},
+    '&:hover': {background: vars.color.mainColor},
+    '&:after': {display: 'none'}
   }
 });
 export const swiperBtnIcon = style({

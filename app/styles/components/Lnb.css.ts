@@ -14,14 +14,13 @@ export const logo = style({padding: '0 2rem'});
 export const navWrap = style({marginTop: '6rem'});
 
 const baseLink = () => ({
-  position: 'relative',
-  display: 'block',
+  position: 'relative' as const,
   padding: '1rem 2rem',
   fontSize: vars.fontSize.medium,
   fontWeight: vars.fontWeight.medium,
   fontFamily: vars.fontFamily.titFont,
   color: vars.color.gray,
-  textTransform: 'capitalize',
+  textTransform: 'capitalize' as const,
   display: 'flex',
   alignItems: 'center',
   gap: '1.2rem',
@@ -31,10 +30,10 @@ const baseLink = () => ({
     '&:hover, &:active': {color: vars.color.mainColor},
     '&:hover::after, &:active::after': {opacity: 1},
     '&::after': {
-      content: '',
+      content: '""',
       width: '.4rem',
       height: '100%',
-      position: 'absolute',
+      position: 'absolute' as const,
       top: '50%',
       transform: 'translateY(-50%)',
       right: 0,

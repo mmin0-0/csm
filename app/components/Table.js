@@ -4,12 +4,7 @@ import { emphasis } from '../styles/global.css';
 import { ObjectId } from 'mongodb';
 import { useRouter } from 'next/navigation';
 
-interface TableProps {
-  columns: string[];
-  data: { _id: ObjectId; title: string; content: string; author: string; postType: string; createAt: string }[];
-}
-
-export const BoardTable: React.FC<TableProps> = ({ columns, data }) => {
+export const BoardTable = ({ columns, data }) => {
   const router = useRouter();
   const sortedData = data.sort((a, b) => {
     if (a.postType === 'notice' && b.postType !== 'notice'){

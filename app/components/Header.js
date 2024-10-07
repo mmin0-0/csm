@@ -1,16 +1,12 @@
-import Link from 'next/link';
 import { btnWrap } from '../styles/global.css';
 import { SearchBar } from './Input';
 import * as hdStyles from '../styles/components/Header.css';
 import { LoginBtn, LogoutBtn, RegisterBtn } from './Button';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/pages/api/auth/[...nextauth]';
-// import { signIn, signOut } from 'next-auth/react';
-// import userIcon from '@/public/images/icon/user_icon.png';
+import { authOptions } from '@/pages/api/auth/[...nextauth]'; 
 
 export default async function Header() {
   const session = await getServerSession(authOptions);
-  // console.log(session.user.name)
   return (
     <header className={hdStyles.header}>
       <div className={hdStyles.hdInner}>

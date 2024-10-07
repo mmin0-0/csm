@@ -11,15 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodePullRequest, faCode, faPenNib, faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useRef } from 'react';
 
-interface OutsourcingProps {
-  slides: { field: string; job: string; name: string; position: string; content: string; }[];
-}
-
-interface EventProps{
-  slides: {title: string}
-}
-
-export const OutsourcingSwiper: React.FC<OutsourcingProps> = ({ slides }) => {
+export const OutsourcingSwiper = ({ slides }) => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
 
@@ -34,7 +26,7 @@ export const OutsourcingSwiper: React.FC<OutsourcingProps> = ({ slides }) => {
     }
   }, []);
 
-  const getIconByField = (field: string) => {
+  const getIconByField = (field) => {
     switch (field) {
       case 'design':
         return faPenNib;
@@ -111,7 +103,7 @@ export const OutsourcingSwiper: React.FC<OutsourcingProps> = ({ slides }) => {
   );
 };
 
-export const EventSwiper: React.FC<EventProps> = ({slides}) => {
+export const EventSwiper = ({slides}) => {
   return(
     <div className="swiper-container">
       <Swiper

@@ -1,11 +1,7 @@
 import { hide } from '../styles/global.css';
 import * as inpStyle from '../styles/components/Input.css';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-}
-
-export const SearchBar: React.FC<ButtonProps> = ({ children, ...props }) => {
+export const SearchBar = ({ children, ...props }) => {
 
   return (
     <div tabIndex={0} className={inpStyle.searchContainer}>

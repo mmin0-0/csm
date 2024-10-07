@@ -3,16 +3,7 @@ import { useRouter } from "next/navigation";
 import { signIn, signOut } from 'next-auth/react';
 import * as buttonStyle from '../styles/components/Button.css';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-}
-
-interface BoardControlsProps extends ButtonProps {
-  result: {
-    _id: string;
-  };
-}
-export const ButtonType01: React.FC<ButtonProps> = ({ children, ...props }) => {
+export const ButtonType01 = ({ children, ...props }) => {
   return (
     <button className={buttonStyle.defaultBtn} {...props}>
       {children}
@@ -20,26 +11,26 @@ export const ButtonType01: React.FC<ButtonProps> = ({ children, ...props }) => {
   )
 };
 
-export const RegisterBtn: React.FC<ButtonProps> = () => {
+export const RegisterBtn = () => {
   const router = useRouter();
   return (
     <button type="button" onClick={() => { router.push('/register') }} className={buttonStyle.defaultBtn}>Join Us</button>
   )
 };
 
-export const LoginBtn: React.FC<ButtonProps> = () => {
+export const LoginBtn = () => {
   return (
     <button type="button" onClick={() => { signIn() }} className={buttonStyle.defaultBtn}>Login</button>
   )
 };
 
-export const LogoutBtn: React.FC<ButtonProps> = () => {
+export const LogoutBtn = () => {
   return (
     <button type="button" onClick={() => { signOut() }} className={buttonStyle.defaultBtn}>Logout</button>
   )
 };
 
-export const ListLink: React.FC<ButtonProps> = ({ children, ...props }) => {
+export const ListLink = ({ children, ...props }) => {
   const router = useRouter();
   const handleListBtn = () => {
     router.push('/board');
@@ -51,7 +42,7 @@ export const ListLink: React.FC<ButtonProps> = ({ children, ...props }) => {
   )
 };
 
-export const BoardControls: React.FC<BoardControlsProps> = ({ result, children, ...props }) => {
+export const BoardControls = ({ result, children, ...props }) => {
   const router = useRouter();
 
   const handleEditBtn = () => {

@@ -1,11 +1,20 @@
-const withImages = require('next-images');
-const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
-
-const withVanillaExtract = createVanillaExtractPlugin();
-
 /** @type {import('next').NextConfig} */
+const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin');
+
 const nextConfig = {
-  // Next.js 기본 설정 추가 가능
+  reactStrictMode: true,
+  webpack: (config) => {
+    config.resolve.fallback = {
+      fs: false,
+      dns: false,
+      net: false,
+      tls: false,
+    };
+
+    config.plugins.push(new VanillaExtractPlugin());
+
+    return config;
+  },
 };
 
-module.exports = withImages(withVanillaExtract(nextConfig));
+module.exports = nextConfig;

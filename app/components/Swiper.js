@@ -15,14 +15,10 @@ export const OutsourcingSwiper = ({ slides }) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  useEffect(()=>{
-    if(prevRef.current && nextRef.current){
-      setTimeout(()=>{
-        if(prevRef.current && nextRef.current){
-          prevRef.current.classList.add('swiper-button-prev');
-          nextRef.current.classList.add('swiper-button-next');
-        }
-      }, 0);
+  useEffect(() => {
+    if (prevRef.current && nextRef.current) {
+      prevRef.current.classList.add('swiper-button-prev');
+      nextRef.current.classList.add('swiper-button-next');
     }
   }, []);
 
@@ -57,6 +53,12 @@ export const OutsourcingSwiper = ({ slides }) => {
           if(swiper.params.navigation){
             swiper.params.navigation.prevEl = prevRef.current;
             swiper.params.navigation.nextEl = nextRef.current;
+          }
+        }}
+        onInit={(swiper) => {
+          if (prevRef.current && nextRef.current) {
+            swiper.navigation.init();
+            swiper.navigation.update();
           }
         }}
       >

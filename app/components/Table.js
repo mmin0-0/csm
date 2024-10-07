@@ -1,5 +1,6 @@
 'use client'
 import * as tableStyles from '../styles/components/Table.css';
+import * as pageStyles from "../styles/Pages.css";
 import { emphasis } from '../styles/global.css';
 import { ObjectId } from 'mongodb';
 import { useRouter } from 'next/navigation';
@@ -22,7 +23,7 @@ export const BoardTable = ({ columns, data }) => {
         <caption>board table</caption>
         <colgroup>
           {columns.map((col, idx) => {
-            const width = col === '내용' ? '260px' : '120px';
+            const width = col === '제목' ? '*' : '160px';
             return <col width={width} key={idx} />;
           })}
         </colgroup>
@@ -51,10 +52,10 @@ export const BoardTable = ({ columns, data }) => {
                       }
                     </div>
                   </td>
-                  <td><div className={tableStyles.tableItem}>{item.title}</div></td>
-                  <td><div className={tableStyles.tableItem}>{item.content}</div></td>
+                  <td><div className={`${tableStyles.tableItem} ${pageStyles.textAlignLeft}`}>{item.title}</div></td>
                   <td><div className={tableStyles.tableItem}>{item.name}</div></td>
                   <td><div className={tableStyles.tableItem}>{item.createAt.split(' ')[0]}</div></td>
+                  <td><div className={tableStyles.tableItem}>0</div></td>
                 </tr>
               )
             })

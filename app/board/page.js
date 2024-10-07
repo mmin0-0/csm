@@ -6,7 +6,7 @@ import { BoardTable } from "../components/Table";
 export default async function Board(){
   const db = (await connectDB).db('board');
   const result = await db.collection('post').find().toArray();
-  const tableTit = ['No.', '제목', '내용', '작성자', 'Date'];
+  const tableTit = ['No.', '제목', '작성자', 'Date', '좋아요'];
   
   return(
     <>

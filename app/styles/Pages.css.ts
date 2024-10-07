@@ -15,6 +15,7 @@ export const activeBox = style({
     '&:hover': {boxShadow: `rgba(${vars.color.blueRGB}, .25) 0px 8px 18px;`}
   }
 });
+export const textAlignLeft = style({textAlign: 'left'});
 
 // home style
 export const homeGroup = style({});

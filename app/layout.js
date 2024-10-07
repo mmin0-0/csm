@@ -1,4 +1,4 @@
-import { Noto_Sans_KR, Roboto } from 'next/font/google';
+import { Noto_Sans_KR, Roboto as RobotoFont } from 'next/font/google';
 import './styles/reset.css';
 import './styles/theme.css';
 import * as globalStyles from "./styles/global.css";
@@ -15,7 +15,7 @@ const NotoSansKR = Noto_Sans_KR({
   variable: '--font-noto-sans-kr'
 });
 
-const Roboto = Roboto({
+const Roboto = RobotoFont({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   variable: '--font-roboto'

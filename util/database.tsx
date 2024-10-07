@@ -1,13 +1,11 @@
-import { MongoClient } from 'mongodb';
+import { MongoClient, MongoClientOptions} from 'mongodb';
 
-const url = 'mongodb+srv://admin:qwer1234@cluster0.c1s2x.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
-const options = { useNewUrlParser: true };
+const url: string process.env.MONGODB_URL || '';
+const options: MongoClientOptions = { useNewUrlParser: true };
 
-// MongoClient 타입을 명시
 let connectDB: Promise<MongoClient>;
 
 declare global {
-  // Global 객체에 _mongo 변수를 추가해 TypeScript에서 사용할 수 있게 선언
   var _mongo: Promise<MongoClient> | undefined;
 }
 

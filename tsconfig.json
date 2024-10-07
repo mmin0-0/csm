@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/styles/theme.css.ts", "app/styles/theme.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/styles/theme.css.ts", "app/styles/theme.js", "app/components/Header.tsx", "app/components/Button.tsx", "app/components/Alert.tsx", "app/components/Input.tsx"],
   "exclude": ["node_modules"]
 }

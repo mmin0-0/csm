@@ -1,6 +1,6 @@
 'use client'
 import { joinUs } from '../data.js';
-import { ButtonType01 } from '../components/Button';
+import { ButtonType01 } from '../components/Button.js';
 import * as globalStyles from "../styles/global.css";
 import * as pageStyles from '../styles/Pages.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

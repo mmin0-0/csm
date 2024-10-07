@@ -1,8 +1,8 @@
 import { joinUs } from '../data.js';
-import * as globalStyles from '../styles/global.css';
-import * as pageStyles from '../styles/Pages.css';
+import * as globalStyles from '../styles/global.css.js';
+import * as pageStyles from '../styles/Pages.css.js';
 import Link from 'next/link';
-import Form from './Form';
+import Form from './Form.js';
 
 export default function Register() {
   return (

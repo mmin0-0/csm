@@ -1,8 +1,8 @@
 import { connectDB } from '@/util/database';
-import * as globalStyles from "./styles/global.css";
-import * as pageStyles from './styles/Pages.css';
+import * as globalStyles from "./styles/global.css.js";
+import * as pageStyles from './styles/Pages.css.js';
 import Link from 'next/link';
-import { OutsourcingSwiper, EventSwiper } from './components/Swiper';
+import { OutsourcingSwiper, EventSwiper } from './components/Swiper.js';
 import { outsourcingData, EventData, learning, contactMembers } from './data.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook, faRulerCombined, faPen, faEllipsisVertical, faBullhorn } from '@fortawesome/free-solid-svg-icons';

@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/styles/theme.css.ts", "app/styles/theme.js", "app/components/Header.tsx", "app/components/Button.tsx", "app/components/Alert.tsx", "app/components/Input.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/styles/theme.css.ts", "app/styles/theme.js", "app/components/Header.js", "app/components/Button.js", "app/components/Alert.js", "app/components/Input.js", "util/database.js", "app/board/page.js", "app/components/Lnb.js", "app/components/Swiper.js", "app/components/Table.js", "app/detail/[id]/Comment.js", "app/detail/[id]/page.js", "app/edit/[id]/page.js", "app/register/page.js", "app/write/page.js", "app/error.js", "app/layout.js", "app/loading.js", "app/not-found.js", "app/page.js"],
   "exclude": ["node_modules"]
 }

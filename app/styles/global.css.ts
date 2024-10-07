@@ -186,7 +186,8 @@ export const inputTypeStyles = {
   textarea: style({
     height: '20rem',
     resize: 'none',
-    outline: 'none'
+    outline: 'none',
+    whiteSpace: 'pre-wrap'
   })
 };
 

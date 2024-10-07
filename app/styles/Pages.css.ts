@@ -113,6 +113,8 @@ export const swiperControls = style({
   gap: '1rem'
 });
 export const swiperBtn = style({
+  position: 'static',
+  marginTop: 0,
   padding: 0,
   width: '4rem',
   height: '4rem',

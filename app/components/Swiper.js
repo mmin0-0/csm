@@ -12,15 +12,15 @@ import { faCodePullRequest, faCode, faPenNib, faBookOpen } from '@fortawesome/fr
 import { useEffect, useRef } from 'react';
 
 export const OutsourcingSwiper = ({ slides }) => {
-  const prevRef = useRef<HTMLButtonElement | null>(null);
-  const nextRef = useRef<HTMLButtonElement | null>(null);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
   useEffect(()=>{
     if(prevRef.current && nextRef.current){
       setTimeout(()=>{
         if(prevRef.current && nextRef.current){
-          prevRef.current.classList.add('swier-button-prev');
-          nextRef.current.classList.add('swier-button-next');
+          prevRef.current.classList.add('swiper-button-prev');
+          nextRef.current.classList.add('swiper-button-next');
         }
       }, 0);
     }

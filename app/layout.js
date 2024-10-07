@@ -1,4 +1,4 @@
-import { Noto_Sans_KR, Roboto as RobotoFont } from 'next/font/google';
+import { Noto_Sans_KR, Roboto } from 'next/font/google';
 import './styles/reset.css';
 import './styles/theme.css';
 import * as globalStyles from "./styles/global.css";
@@ -9,13 +9,13 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
-const NotoSansKR = Noto_Sans_KR({
+const notoSansKR = Noto_Sans_KR({
   subsets: ['latin'],
   weight: ['400','500','600','700'],
   variable: '--font-noto-sans-kr'
 });
 
-const Roboto = RobotoFont({
+const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   variable: '--font-roboto'

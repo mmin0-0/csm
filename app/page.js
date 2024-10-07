@@ -19,7 +19,7 @@ export default async function Home({ searchParams }) {
     { label: '게시판', value: 'board' }
   ];
 
-  const getIconByField = (field: string) => {
+  const getIconByField = (field) => {
     switch (field) {
       case 'design':
         return faRulerCombined;
@@ -142,36 +142,10 @@ export default async function Home({ searchParams }) {
               </div>
               <div className={pageStyles.homeContInner}>
                 <EventSwiper slides={EventData} />
-                {/* <div className={pageStyles.eventWrap}></div> */}
               </div>
             </section>
           </div>
         </div>
-        {/* <div className={pageStyles.homeItem}>
-          <div>
-            <section>
-              <div className={pageStyles.homeContInner}>
-                <div className={pageStyles.lecture}>
-                  {
-                    learning.map((item) =>
-                      <div key={item.field} className={pageStyles.contBox}>
-                        <Link href="#none">
-                          <i className={pageStyles.lectureIcon}>
-                            <FontAwesomeIcon icon={getIconByField(item.field)} />
-                          </i>
-                          <div className="info">
-                            <strong>{item.title}</strong>
-                            <span>{item.time}</span>
-                          </div>
-                        </Link>
-                      </div>
-                    )
-                  }
-                </div>
-              </div>
-            </section>
-          </div>
-        </div> */}
       </div>
     </>
   );

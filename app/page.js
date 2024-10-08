@@ -57,21 +57,25 @@ export default async function Home({ searchParams }) {
                   </div>
                   <ul className={pageStyles.boardWrap}>
                     {
-                      (activeTab === 'notice' ? notices : boardPosts).map((item, idx) => (
-                        <li key={item} className={pageStyles.boardItem}>
-                          <Link href={`/detail/${item._id}`}>
-                            <p>
-                              {
-                                activeTab === 'notice' ? (
-                                  <i><FontAwesomeIcon icon={faBullhorn} /></i>
-                                ):(<></>)
-                              }
-                              {item.title}
-                            </p>
-                            <span>{item.createAt.split(' ')[0]}</span>
-                          </Link>
-                        </li>
-                      ))
+                      (activeTab === 'notice' ? notices : boardPosts).length === 0 ? (
+                        <li className={pageStyles.emptyBoardItem}>게시물이 없습니다.</li>
+                      ):(
+                        (activeTab === 'notice' ? notices : boardPosts).map((item, idx) => (
+                          <li key={item} className={pageStyles.boardItem}>
+                            <Link href={`/detail/${item._id}`}>
+                              <p>
+                                {
+                                  activeTab === 'notice' ? (
+                                    <i><FontAwesomeIcon icon={faBullhorn} /></i>
+                                  ):(<></>)
+                                }
+                                {item.title}
+                              </p>
+                              <span>{item.createAt.split(' ')[0]}</span>
+                            </Link>
+                          </li>
+                        ))
+                      )
                     }
                   </ul>
                 </div>

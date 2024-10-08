@@ -57,8 +57,15 @@ export const boardWrap = style({
   paddingTop: '1rem',
   borderTop: `1px solid ${vars.color.gray02}`
 });
+export const emptyBoardItem = style({
+  minHeight: '20rem',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  color: vars.color.gray
+});
 export const boardItem = style({
-  padding: '.6rem .4rem',
+  padding: '.6rem',
   borderRadius: '.4rem',
   transition: 'all .25s',
   selectors: {

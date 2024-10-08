@@ -85,7 +85,7 @@ globalStyle(`${boardTable} td div`, {
 export const boardCont = style({
   padding: '2rem 1.4rem',
   minHeight: '10rem',
-  maxHeight: '30rem',
+  // maxHeight: '30rem',
   overflowY: 'auto',
   background: vars.color.white,
   borderBottom: `1px solid ${vars.color.gray}`

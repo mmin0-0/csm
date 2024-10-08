@@ -13,12 +13,14 @@ export default async function handler(req, res){
   if(req.method == 'POST'){
     req.body = JSON.parse(req.body);
     const now = new Date();
-      const formattedDate = now.getFullYear() + '-' + 
-        String(now.getMonth() + 1).padStart(2, '0') + '-' + 
-        String(now.getDate()).padStart(2, '0') + ' ' + 
-        String(now.getHours()).padStart(2, '0') + ':' + 
-        String(now.getMinutes()).padStart(2, '0') + ':' + 
-        String(now.getSeconds()).padStart(2, '0');
+    const formattedDate = now.toLocaleString('ko-KR', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    }).replace(/\.\s/g, '-').replace(' ', ' ');
       
     req.body.createAt = formattedDate;  
     

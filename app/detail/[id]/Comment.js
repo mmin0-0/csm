@@ -127,7 +127,15 @@ export default function Comment(props) {
                   </div> */}
                 </div>
                 <div className={pageStyles.commentCont}>
-                  <p>{a.content}</p>
+                  <p>
+                    {
+                      a.content.split('\n').map((line, idx) => (
+                        <span key={idx}>
+                          {line}<br />
+                        </span>
+                      ))
+                    }
+                  </p>
                   {/* {
                     editCommentId === a._id ? (
                       <>

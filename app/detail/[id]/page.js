@@ -55,7 +55,6 @@ export default async function Detail(props) {
             </table>
           </div>
           <div className={tableStyles.boardCont}>
-            {/* <div className="img-wrap"></div> */}
             <p>{result.content}</p>
           </div>
           <Comment _id={result._id.toString()}/> 

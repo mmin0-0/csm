@@ -31,61 +31,61 @@ export default function Comment(props) {
       .then(res => res.json())
       .then((response) => {
         if (response.error) {
-          alert(response.error); // 로그인 안 된 경우 에러 메시지 출력
+          alert(response.error);
         } else {
           setData(prevData => [...prevData, response.newComment]);
           setComment('');
-          alert('작성완료');
+          alert(response.message);
         }
       });
   };
 
-  const handleDeleteClick = (commentId, authorEmail) => {
-    if (currentUser.email === authorEmail || currentUser.role === 'admin') {
-      fetch('/api/comment/delete', {
-        method: 'POST',
-        body: JSON.stringify({ _id: commentId }),
-      })
-        .then(res => res.json())
-        .then((result) => {
-          if (result.success) {
-            setData(prevData => prevData.filter(comment => comment._id !== commentId));
-            alert('댓글이 삭제되었습니다.');
-          } else {
-            alert('댓글 삭제에 실패했습니다.');
-          }
-        });
-    } else {
-      alert('댓글을 삭제할 권한이 없습니다.');
-    }
-  };
+  // const handleDeleteClick = (commentId, authorEmail) => {
+  //   if (currentUser.email === authorEmail || currentUser.role === 'admin') {
+  //     fetch('/api/comment/delete', {
+  //       method: 'POST',
+  //       body: JSON.stringify({ _id: commentId }),
+  //     })
+  //       .then(res => res.json())
+  //       .then((result) => {
+  //         if (result.success) {
+  //           setData(prevData => prevData.filter(comment => comment._id !== commentId));
+  //           alert('댓글이 삭제되었습니다.');
+  //         } else {
+  //           alert('댓글 삭제에 실패했습니다.');
+  //         }
+  //       });
+  //   } else {
+  //     alert('댓글을 삭제할 권한이 없습니다.');
+  //   }
+  // };
 
-  const handleEditClick = (commentId, content, authorEmail) => {
-    if (currentUser.email === authorEmail || currentUser.role === 'admin') {
-      setEditCommentId(commentId);
-      setEditContent(content);
-    } else {
-      alert('댓글을 수정할 권한이 없습니다.');
-    }
-  };
+  // const handleEditClick = (commentId, content, authorEmail) => {
+  //   if (currentUser.email === authorEmail || currentUser.role === 'admin') {
+  //     setEditCommentId(commentId);
+  //     setEditContent(content);
+  //   } else {
+  //     alert('댓글을 수정할 권한이 없습니다.');
+  //   }
+  // };
 
-  const editComment = () => {
-    fetch('/api/comment/edit', {
-      method: 'POST',
-      body: JSON.stringify({
-        _id: editCommentId,
-        content: editContent,
-      })
-    })
-      .then(res => res.json())
-      .then(updatedComment => {
-        setData(prevData => prevData.map(comment =>
-          comment._id === updatedComment._id ? updatedComment : comment
-        ));
-        setEditCommentId(null);
-        setEditContent('');
-      });
-  };
+  // const editComment = () => {
+  //   fetch('/api/comment/edit', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       _id: editCommentId,
+  //       content: editContent,
+  //     })
+  //   })
+  //     .then(res => res.json())
+  //     .then(updatedComment => {
+  //       setData(prevData => prevData.map(comment =>
+  //         comment._id === updatedComment._id ? updatedComment : comment
+  //       ));
+  //       setEditCommentId(null);
+  //       setEditContent('');
+  //     });
+  // };
 
   return (
     <div className={pageStyles.commentWrap}>

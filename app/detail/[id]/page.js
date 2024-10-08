@@ -43,7 +43,7 @@ export default async function Detail(props) {
                 </tr>
                 <tr>
                     <th><div>작성자</div></th>
-                    <td><div>{result.author}</div></td>
+                    <td><div>{result.name}</div></td>
                     <th><div>조회수</div></th>
                     <td><div>1</div></td>
                 </tr>

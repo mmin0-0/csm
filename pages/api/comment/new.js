@@ -27,12 +27,11 @@ export default async function handler(req, res){
       parent: new ObjectId(req.body._id),
       email: session.user.email,
       author_name: session.user.name,
-      createAt: req.body.createAt,
-      likes: 0
+      createAt: req.body.createAt
     };
     
     const db = (await connectDB).db('board');
     const result = await db.collection('comment').insertOne(commentInfo);
-    res.status(200).json('저장완료');
+    res.status(200).json({message: '등록완료'});
   }
 }

@@ -53,7 +53,7 @@ export const BoardTable = ({ columns, data }) => {
                     </div>
                   </td>
                   <td><div className={`${tableStyles.tableItem} ${pageStyles.textAlignLeft}`}>{item.title}</div></td>
-                  <td><div className={tableStyles.tableItem}>{item.name}</div></td>
+                  <td><div className={`${tableStyles.tableItem} ${pageStyles.textAlignLeft}`}>{item.name}</div></td>
                   <td><div className={tableStyles.tableItem}>{item.createAt.split(' ')[0]}</div></td>
                   <td><div className={tableStyles.tableItem}>0</div></td>
                 </tr>

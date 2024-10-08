@@ -353,7 +353,7 @@ globalStyle(`${commentControls} button:hover`, {background: 'inherit'});
 globalStyle(`${commentControls} button:not(:last-child)`, {borderRight: `1px solid ${vars.color.gray}`});
 globalStyle(`${commentControls} button:hover`, {color: vars.color.mainColor});
 export const commentCont = style({marginTop: '2rem'});
-globalStyle(`${commentCont} p`, {lineHeight: '1.2'});
+globalStyle(`${commentCont} p span`, {lineHeight: '1.4'});
 // write page
 
 // register page

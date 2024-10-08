@@ -33,9 +33,10 @@ export default function Comment(props) {
         if (response.error) {
           alert(response.error);
         } else {
-          setData(prevData => [...prevData, response.newComment]);
-          setComment('');
+          // setData(prevData => [...prevData, response.newComment]);
           alert(response.message);
+          setComment('');
+          window.location.reload();
         }
       });
   };

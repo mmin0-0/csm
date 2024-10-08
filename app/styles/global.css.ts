@@ -78,7 +78,6 @@ export const betweenFlex = style({
 export const wrapper = style({
   display: 'flex',
   width: '100vw',
-  // minWidth: '1400px',
 });
 
 export const wrap = style({
@@ -86,12 +85,12 @@ export const wrap = style({
   minHeight: '100vh',
   background: vars.color.gray03,
   position: 'relative',
-  '@media': {
-    [media.lg]: {
-      overflowX: 'auto',
-      minWidth: '1200px'
-    }
-  }
+  // '@media': {
+  //   [media.lg]: {
+  //     overflowX: 'auto',
+  //     minWidth: '1200px'
+  //   }
+  // }
 });
 
 // page 공통요소(title, container)

@@ -55,7 +55,16 @@ export default async function Detail(props) {
             </table>
           </div>
           <div className={tableStyles.boardCont}>
-            <p>{result.content}</p>
+            <p>
+              {
+                result.content.split('\n').map  ((line, idx) => (
+                  <span key={idx}>
+                    {line}
+                    <br />
+                  </span>
+                ))
+              }
+            </p>
           </div>
           <Comment _id={result._id.toString()}/> 
         </div>

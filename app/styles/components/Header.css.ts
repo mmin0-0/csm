@@ -7,13 +7,8 @@ export const header = style({
   padding: '0 2rem',
   position: 'sticky',
   top: 0,
-  zIndex: 10,
+  zIndex: 9,
   background: vars.color.gray03,
-  // '@media': {
-  //   [media.sm]:{
-  //     background: 'black'
-  //   }
-  // }
 });
 
 export const hdInner = style({

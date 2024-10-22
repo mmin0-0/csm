@@ -16,7 +16,8 @@ globalStyle('body', {
   lineHeight: 1,
   // wordBreak: 'keep-all',
   letterSpacing: '-0.02em',
-  color: vars.color.black
+  color: vars.color.black,
+  background: vars.color.gray03
 });
 
 globalStyle('body *', {
@@ -82,6 +83,7 @@ export const wrapper = style({
 
 export const wrap = style({
   width: 'calc(100% - 24rem)',
+  marginLeft: '24rem',
   minHeight: '100vh',
   background: vars.color.gray03,
   position: 'relative',

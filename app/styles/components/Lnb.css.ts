@@ -2,11 +2,15 @@ import { style, composeStyles, globalStyle } from '@vanilla-extract/css';
 import { vars } from '../theme.css';
 
 export const lnbWrap = style({
-  position: 'relative',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  zIndex: 10,
   width: '24rem',
   minWidth: '24rem',
   height: '100vh',
   padding: '2rem 0',
+  background: vars.color.white
 });
 
 export const logo = style({padding: '0 2rem'});

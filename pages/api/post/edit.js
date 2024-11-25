@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     }
 
     const db = (await connectDB).db('board');
-    const target = await db.collection('post').findOne({_id: new ObjectId(req.body)});
+    const target = await db.collection('post').findOne({_id: new ObjectId(req.body._id)});
     
       if(target.author !== session.user.email && session.user.role !== 'admin'){
         return res.status(403).json({ message: '작성자 또는 관리자만 수정 가능합니다.' });
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
   
       const modify = {title: req.body.title, content: req.body.content};
       const result = await db.collection('post').updateOne(
-        {_id: new ObjectId(req.body)},
+        {_id: new ObjectId(req.body._id)},
         {$set: modify}
       );
       return res.status(200).json({message: '수정완료', redirectTo: '/board'})

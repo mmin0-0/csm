@@ -23,7 +23,7 @@ export default async function handler(req, res) {
         {_id: new ObjectId(req.body._id)},
         {$set: modify}
       );
-      return res.status(200).json({message: '수정완료', redirectTo: '/board'})
+      return res.status(200).redirect('/board')
     }catch(error){
       return res.status(500).json({error: '서버 오류 발생'});
     }

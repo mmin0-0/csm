@@ -19,7 +19,7 @@ export default async function handler(req, res){
       }
 
       const result = await db.collection('post').deleteOne({_id: new ObjectId(req.body)});
-      return res.status(200).json({message: '삭제완료', redirectTo: '/board'});
+      return res.status(200).redirect('/board');
       
     }catch(error){
       return res.status(500).json({error: '서버 오류 발생'});

@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { signIn, signOut } from 'next-auth/react';
 import * as buttonStyle from '../styles/components/Button.css';
+import { useRef } from "react";
 
 export const ButtonType01 = ({ children, ...props }) => {
   return (

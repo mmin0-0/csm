@@ -14,7 +14,7 @@ export default async function handler(req, res){
       const db = (await connectDB).db('board');
       const target = await db.collection('post').findOne({ _id : new ObjectId(req.body)});
   
-      if (session.user.role !== 'admin' && target.author !== session.user.email) {
+      if (target.author !== session.user.email && session.user.role !== 'admin') {
         return res.status(403).json('작성자 또는 관리자만 삭제 가능합니다.');
       }
 
